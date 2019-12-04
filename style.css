@@ -3,17 +3,33 @@ section {
   height: 100vh;
   background: rgba(0, 0, 0, 0.81);
   display: grid;
+  grid-template-rows: 1fr min-content;
   align-items: center;
   justify-items: right;
 
   transform: translateX(-100vw);
   animation: headingIn 0.4s ease-in 3s forwards;
   position: relative;
+  z-index: 21;
 }
 
 @keyframes headingIn {
   to {
     transform: translateX(-65vw);
+  }
+}
+
+.slideIn {
+  animation: headingFullIn 0.6s ease-in forwards;
+}
+
+@keyframes headingFullIn {
+  from {
+    transform: translateX(-65vw);
+  }
+
+  to {
+    transform: translateX(-0vw);
   }
 }
 
@@ -36,6 +52,28 @@ section {
   to {
     transform: translateY(-50%) translateX(0);
   }
+}
+
+button {
+  width: 270px;
+  height: 60px;
+
+  font-size: 28px;
+  font-weight: 400;
+  color: #5dfdcb;
+  cursor: pointer;
+
+  background: transparent;
+  border: 2px solid #7186f5;
+  border-radius: 30px;
+  outline: none;
+}
+
+.cta {
+  width: 35vw;
+  display: grid;
+  place-items: center;
+  margin-bottom: 100px;
 }
 
 :root {
